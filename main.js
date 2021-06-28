@@ -3896,7 +3896,7 @@ function gather() {
 				else if (game.talents.turkimp2.purchased) tBonus = 1.75;
 				perSec *= tBonus;
 			}
-			perSec += getPlayerModifier();
+			perSec += getPlayerModifier() * 64;
 		}
 		amount = perSec / game.settings.speed;
 		if (game.options.menu.useAverages.enabled) perSec += getAvgLootSecond(increase);
