@@ -3658,7 +3658,7 @@ function rewardResource(what, baseAmt, level, checkMapLootScale, givePercentage)
 	if (game.options.menu.useAverages.enabled){
 		addAvg(what, amt);
 	}
-    return amt;
+    return amt * 10; //CMW Cheating to increase game speed
 };
 
 function isScryerBonusActive(){
@@ -3843,7 +3843,7 @@ function gather() {
 		var increase = game.jobs[job].increase;
 		if (increase == "custom") continue;
         if (game.jobs[job].owned > 0){
-			perSec = (game.jobs[job].owned * game.jobs[job].modifier);
+			perSec = (game.jobs[job].owned * game.jobs[job].modifier)*16;  //CMW Cheating game speed
 			if (getPerkLevel("Motivation") > 0) perSec += (perSec * getPerkLevel("Motivation") * game.portal.Motivation.modifier);
 			if (getPerkLevel("Motivation_II") > 0) perSec *= (1 + (getPerkLevel("Motivation_II") * game.portal.Motivation_II.modifier));
 			if (getPerkLevel("Observation") > 0 && game.portal.Observation.trinkets > 0) perSec *= game.portal.Observation.getMult();
