@@ -3669,6 +3669,7 @@ function isScryerBonusActive(){
 }
 
 function addHelium(amt){
+	amt = 5*amt;
 	if (game.global.challengeActive) distributeToChallenges(amt);
 	if (game.global.universe == 2){
 		game.resources.radon.owned += amt;
