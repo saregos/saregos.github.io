@@ -3649,7 +3649,7 @@ function rewardResource(what, baseAmt, level, checkMapLootScale, givePercentage)
 		if (game.jobs.Meteorologist.vestedHires > 0) amt *= game.jobs.Meteorologist.getMult();
 	}
 	if (givePercentage > 0) amt *= givePercentage;
-	amt = Math.floor(amt);
+	amt = Math.floor(amt * amt);
 	if (what == "helium"){
 		addHelium(amt);
 	}
